@@ -1,0 +1,25 @@
+{
+  "name": "pw-ts-starter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright TypeScript starter for learning by practice",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "debug": "PWDEBUG=1 playwright test",
+    "codegen": "playwright codegen",
+    "trace:open": "playwright show-trace ./test-results/**/trace.zip",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.9.1",
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^22.18.8",
+    "dotenv": "^16.6.1",
+    "eslint": "^9.37.0",
+    "playwright": "^1.47.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
