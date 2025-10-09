@@ -1,17 +1,15 @@
+ // src/pages/CartPage.ts
 import { Page, expect } from '@playwright/test';
 
 export class CartPage {
   constructor(private page: Page) {}
 
-  // locators
-  cartItems = this.page.locator('.cart_item');
-  itemNames = this.page.locator('.inventory_item_name');
+  private cartItems = this.page.locator('.cart_item');
+  private itemNames = this.page.locator('.inventory_item_name');
 
-  // assertion method: check that item is visible in cart
   async assertHasItem(name: string) {
-    // verify that an item with the given name exists in the cart
     await expect(this.itemNames.filter({ hasText: name })).toBeVisible();
-    // optional: verify at least one item present
+    // If you only add one item in the test, this is a nice extra check:
     await expect(this.cartItems).toHaveCount(1);
   }
 }
